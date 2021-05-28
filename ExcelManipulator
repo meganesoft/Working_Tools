@@ -1,0 +1,12 @@
+from openpyxl import workbook
+from openpyxl.workbook.workbook import Workbook
+import glob
+
+
+class ExcelManipulattor:
+    commonBook  = None
+    def CreateWookBook(bookName):
+        if glob.glob(bookName+".xlsx"):
+            return
+        wb = Workbook()
+        wb.save(bookName)
